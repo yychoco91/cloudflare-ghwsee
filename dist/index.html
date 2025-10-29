@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <title>About GitHub Wiki SEE - 400,000+ Wikis, now indexable.</title>
+    <style>
+        body {
+            max-width: 38rem;
+            padding: 2rem;
+            margin: auto;
+            overflow-wrap: break-word;
+            min-width: 0;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="GitHub blocks direct indexing of many GitHub Wikis. Workaround service to get those GitHub Wikis indexed in Google and other search engines.">
+    <meta property="og:url" content="https://github-wiki-see.page/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GitHub Wiki Search Engine Enablement">
+    <meta property="og:description"
+        content="GitHub blocks direct indexing of many GitHub Wikis. This is a workaround service to get those GitHub Wikis indexed in Google and other search engines.">
+    <meta property="og:image" content="https://github-wiki-see.page/social.png">
+</head>
+
+<body id="main">
+    <h1>GitHub Wiki SEE</h1>
+    <p> 🔎 <i>400,000+ GitHub Wikis, now indexable by your favorite search engine.</i>
+    </p>
+    <p>
+        <em>GitHub Wiki Search Engine Enablement</em> (GHWSEE) allows non-indexed GitHub Wikis to be indexed by search
+        engines. The <a href="/robots.txt"><code>robots.txt</code></a> and <a
+            href="https://github.com/github/feedback/discussions/4992#discussioncomment-1448177">HTTP headers</a> on
+        this site do not prevent indexing of wiki content and GitHub Wiki content proxied from GitHub and served from
+        this service can be crawled and indexed by major search engines.
+    </p>
+    <p>The situation so far:</p>
+    <ul>
+        <li>
+            <a href=https://github.com/github/feedback/discussions/4992>GitHub prevents indexing of repository wiki
+                content</a> through <a
+                href="https://github.com/github/feedback/discussions/4992#discussioncomment-1448177">HTTP headers</a>.
+            The blocking greatly reduces the effectiveness of content of pages on affected Wikis if they cannot be
+            searched on search engines such as Google or DuckDuckGo.
+        </li>
+        <li> GitHub has officially documented that they only index certain GitHub Wikis. According to <a
+                href="https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis">GitHub's documentation</a>,
+                "Search engines will only index wikis with 500 or more stars that you configure to prevent public editing."
+                This provides clarity on the exact criteria being used, which was previously unclear.</li>
+        <li> About <a href="https://docs.google.com/spreadsheets/d/1y5V1xVtL-Z4w4yt9mVQuwGCP3s8TgNAS756IKStRUqs/edit?usp=sharing">
+                3,300</a> GitHub.com Wikis met an older criteria requiring ~1000+ and can be found on search engines
+            such as Google / DuckDuckGo according to a survey in February 2022. </li>
+        <li> About <a href="https://docs.google.com/spreadsheets/d/17yHqnm_cGDrOTCH2TPnpCU9qaxESuF0q0zuoORl76g4/edit">
+                4,700</a> repositories have 798 stars and above and can't be directly indexed by search engines from the
+            same survey with the older criteria in February 2022. These repositories do not appear to have the "Editing
+            Restricted to Repository Collaborators" option turned on. You would likely recognize some of these
+            repositories no matter where your expertise may lie. Many of these projects have large amounts of content in
+            their Wikis and are very active. </li>
+        <li> There are still about 400,000+ GitHub.com Wikis that are below 500 stars and/or publically editable. These
+            can't be directly indexed by search engines as well. </li>
+        <li>GHWSEE is helping GitHub Wikis that aren't indexable be indexable in search engines and is continually
+            decommissioning itself for GitHub Wikis that are directly indexable.</li>
+    </ul>
+    <p> GHWSEE proxies the rendered contents of the pages and has a link with a large button at the top to visit the
+        page on GitHub for everyday usage and a link at the bottom explaining what GHWSEE is. The content of this
+        service is not meant to be read directly by users and is intended for crawlers. GHWSEE is designed to behave
+        like those StackOverflow content mirroring sites that rank high with "stolen" content from StackOverflow but
+        with far less ad-farming. Unlike its inspiration, GHWSEE has no ads and tries to make it obvious, quick, and
+        easy for users to get to the content they want directly on GitHub.com short of an automatic redirect that may
+        make search engines not crawl or index the content.</p>
+    <p> Another purpose of GHWSEE is to bring awareness to the issue of GitHub Wikis purposefully not being indexed
+        since <a href="https://github.com/isaacs/github/issues/1683#issuecomment-763628184">2012</a>. Many are caught
+        off-guard and have produced massive libraries of information that they are unaware of being generally invisible
+        to the internet. Likewise, many searching for information in these libraries are not aware that the information
+        is invisible to them if it was in a GitHub Wiki. <a href="https://github.com/github/docs/pull/5054">Up until
+            April 2021 (9 years since 2012), GitHub did not document this limitation; the only way you knew was by
+            previously looking at robots.txt.</a> A warning is still not present in GitHub's UI itself about this
+        limitation. By showing up in real-world search results, it is hoped that greater awareness to this issue can be
+        made amongst affected communities and projects.</p>
+    <p> If you are a GitHub Wiki maintainer, you may want to consider GitHub Pages backed by a public repository for
+        your community's content as a more crawlable, stable, blessed, and probably higher search ranking alternative.
+        <a
+            href="https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis#:~:text=Note%3A%20Search%20engines%20will%20not%20index%20the%20contents%20of%20wikis.%20To%20have%20your%20content%20indexed%20by%20search%20engines%2C%20you%20can%20use%20GitHub%20Pages%20in%20a%20public%20repository.">This
+            alternative is also mentioned in GitHub Docs about GitHub Wikis</a>. <a
+            href="https://github.com/tokio-rs/website/pull/109">Consider adding an "<em>Edit on GitHub</em>" link to the
+            content on GitHub Pages to have an experience closer to wikis, easily permit editing, and to encourage
+            contributions</a>. This is the official solution which can be burdensome and you are welcome to continue <a
+            href="#usage">using</a> GHWSEE.</a>
+    </p>
+    <ul>
+        <li> A great example of an organization taking the moving to GitHub Pages route would be the <a
+                href="https://libgdx.com/">libGDX</a> cross-platform Java game development framework project. The
+            project has migrated their Wiki to their website. The pages are very faithful to the original GitHub <a
+                href="https://libgdx.com/wiki/">Wiki page design</a> including the aforementioned "Edit on GitHub" link.
+            You can see the Jekyll/GitHub Pages implementation backing this in their <a
+                href="https://github.com/libgdx/libgdx.github.io"> repository</a>. There is also a <a
+                href="https://github.com/libgdx/libgdx.github.io/pull/65">pull request</a> on that repository that can
+            be used as a reference as well.</li>
+        <li>It is also possible to target a "Editing Restricted to Repository Collaborators" GitHub Wiki itself as well
+            from the GitHub repository and deploy to it with GitHub Actions and have it be indexed if the repo has a
+            high star count (500+). These Wikis are likely to be whitelisted by GitHub for direct indexing (please test
+            first). An example of this can be seen on the <a href="https://github.com/golang/vscode-go/issues/2094">Go
+                for VSCode repository.</a> </li>
+        <li> Some organizations or projects such as <a
+                href="https://github.com/koalaman/shellcheck/issues/2487">ShellCheck</a> mirror their content themselves
+            and choose to keep their Wikis editable. NOTE: GHWSEE cannot automatically disengage itself for wikis backed
+            by this setup as it is technically impossible to automatically detect. Please <a
+                href="https://github.com/nelsonjchen/github-wiki-see-rs/issues">create an issue</a> if your project or
+            any other project still permits editing but mirrors their content themselves and a blacklist entry can be <a
+                href="https://github.com/nelsonjchen/github-wiki-see-rs/blob/master/src/decommission.rs#L3283">added</a>.
+        </li>
+        <li>If you or your organization does any of this, please reach out to me to try to expedite search engines to
+            remove GHWSEE's entries from search engine results for the migrated wiki. Please also make sure to produce
+            the necessary sitemaps and monitor your own wiki's content indexing progress and ranking via tools such as
+            Google Search Console or Bing Webmaster Tools (Bing is also a DuckDuckGo source).</li>
+    </ul>
+    <p> If you are interested in providing feedback to GitHub or seeing what GitHub staff has said about their blocking
+        of Wiki content from appearing in search engines, participate in the discussion here: <a
+            href="https://github.com/github/feedback/discussions/4992">https://github.com/github/feedback/discussions/4992</a>.
+        Let us hope that GitHub can find a solution to unblock GitHub Wiki content in harmony with their SEO concerns,
+        and GHWSEE can be <a href="#decommissioning">decommissioned</a>. Already, Wikis that are known to be directly
+        indexable are skipped by GHWSEE as part of the partial decommissioning. </p>
+    <p> For anti-abuse reasons, all links rendered in the service that are going out of GitHub are tagged with
+        <code>rel="nofollow <a href="https://developers.google.com/search/blog/2019/09/evolving-nofollow-new-ways-to-identify">ugc</a>"</code>
+        as to not affect search engine rankings or to promote mass vandalism of GitHub Wikis. This is in addition to
+        <code>rel="nofollow"</code> in the original content. </p>
+    <h2 id="usage">Usage</h2>
+    <ul>
+        <li>Wiki Reader: Use your favorite search engine! <em>Every</em> query you run searches a corpus that has GHWSEE
+            in it. That is the intended interface to the content "on" this service and to get a link to the original
+            GitHub content. Do not read or use the content on this site as it may have rendered with errors and is only
+            meant for robots. Go directly to the original page on GitHub with the link or button.</li>
+        <ul>
+            <li> Scripters/Extension Authors/Power Users: If you would like to automatically redirect to the GitHub Wiki
+                page on GitHub.com when landing on a GHWSEE page, please see this document for an API and/or examples:
+                <a
+                    href="https://github.com/nelsonjchen/github-wiki-see-rs/blob/master/AUTO_REDIRECT_API.md">https://github.com/nelsonjchen/github-wiki-see-rs/blob/master/AUTO_REDIRECT_API.md</a>
+            </li>
+        </ul>
+        <li>Wiki Editor whose Wiki does not meet the native indexing criterias: If you are a GitHub Wiki contributor,
+            simply edit your content periodically and the <a
+                href=https://github.com/nelsonjchen/github-wiki-see-rs-sitemaps>sitemap generator</a> will eventually
+            pick it up and notify search engines. Because this just isn't GitHub.com, don't expect a high ranking as
+            your content will probably be on page 2, 3, or worse. That is still much better than the previous
+            alternative of not being in the search results at all! Note that it may take quite some time and luck for
+            content to be picked up or detected by search engine crawlers and there is no guarantee it will be picked up
+            or detected.</li>
+        <ul>
+            <li>If you would like to greatly increase the chances and ranking of your GitHub Wiki content being indexed,
+                consider adding a link to your content on GHWSEE to a location where search engines can index. For an
+                example of this in action, see how the <a
+                    href="https://github.com/MiSTer-devel/Main_MiSTer#main_mister-main-binary-and-wiki-repo">MiSTer
+                    historical computing and gaming recreation project linked a "crawlable wiki" that GHWSEE serves in
+                    their README on GitHub which can be indexed</a>. While the link is "nofollow" on the README as
+                displayed on GitHub, that attribute is <a
+                    href="https://developers.google.com/search/blog/2019/09/evolving-nofollow-new-ways-to-identify"> of
+                    a guideline than a hard rule nowadays </a> for search engines anyway. Repositories can confer their
+                own ranking power onto their proxied and indexable Wiki content on GHWSEE.</li>
+        </ul>
+    </ul>
+    <h2>Examples</h2>
+    <p> These are just examples and testing wikis.</p>
+    <ul>
+        <li><a href="/m/nelsonjchen/github-wiki-test/wiki">nelsonjchen/github-wiki-test</a> - Test</li>
+        <li><a href="/m/commaai/openpilot/wiki">commaai/openpilot</a> - Poster Child (popular, editable wiki)</li>
+        <li><a
+                href="/m/Erithano/Timon-Your-FAQ-bot-for-Microsoft-Teams/wiki">Erithano/Timon-Your-FAQ-bot-for-Microsoft-Teams</a>
+            - Irony </li>
+        <li><a href="/m/wlsdn2316/1-tetris-/wiki">wlsdn2316/1-tetris-</a> - Funky </li>
+        <li><a href="/m/pyenv/pyenv/wiki">pyenv/pyenv</a> - They don't know. How long till they find out? </li>
+        <li><a href="/m/themactep/thingino-firmware/wiki">themactep/thingino-firmware</a> - Thingino firmware for IP cameras</li>
+    </ul>
+    <h2>Project, README, Source, Issues, and other information</h2>
+    <a href="https://github.com/nelsonjchen/github-wiki-see-rs">https://github.com/nelsonjchen/github-wiki-see-rs</a>
+    <p> So far, about $300 have been spent on experiments, queries, and so on with this service during its initial
+        ramp-up. The good news is that the cost to currently host the service is very low. In lieu of any compensation,
+        please consider donating money recurringly or one-time to the <a href="https://archive.org">Internet Archive</a>
+        and/or your time to <a href="https://archiveteam.org">Archive Team</a> projects. </p>
+    <h2 id="decommissioning">Decommissioning</h2>
+    <p>This service will be completely decommissioned to redirect old links once the block is lifted or GitHub produces
+        some other solution to index all useful GitHub Wikis in harmony with their SEO concerns.</p>
+    <p>People shouldn't have linked to this site but maybe the warnings weren't big and red enough. <a
+            href="https://github.com/nelsonjchen/github-wiki-see-rs/issues/6">Flashing yellow was very unpopular.</a>
+        Regardless, let us not contribute to link rot. </p>
+    <h3>Ongoing Continuous Partial Decommissioning</h3>
+    <p> As of January 2022, GitHub does appear to be letting some Wikis be indexed according to some non-public
+        criteria. These small sample of Wikis allow native indexing by not having a <code>x-robots-tag: none</code> HTTP
+        header. A Cloudflare Worker is implemented in front of the proxied URLs to check GitHub and automatically
+        redirect if the backing page is detected to allow indexing if something doesn't get added to that list on time.
+        By automatically redirecting, it is hoped that GHWSEE's entries for that GitHub wiki falls off the search engine
+        index and that GHWSEE's ranking may be conferred directly on GitHub's ranking. </p>
+    <p>Some projects have chosen to mirror their own wiki's content onto their own site as well. These cannot be
+        automatically detected, but may be manually added to the decommission list. </p>
+    <p> The small sample of links below help test the partial decommissioning functionality. </p>
+    <ul>
+        <li><a href="/m/TileDB-Inc/TileDB/wiki">TileDB-Inc/TileDB</a> - 1000+ stars, no editing </li>
+        <li><a href="/m/PixarAnimationStudios/USD/wiki">PixarAnimationStudios/USD</a> - 1000+ stars, no editing </li>
+        <li><a href="/m/naver/billboard.js/wiki">naver/billboard.js</a> - 1000+ stars, no editing </li>
+        <li><a href="/m/IgniteUI/igniteui-angular/wiki">IgniteUI/igniteui-angular</a> - ~500 stars, no editing </li>
+        <li><a href="/m/koalaman/shellcheck/wiki">koalaman/shellcheck</a> - project self-mirrors </li>
+    </ul>
+    <hr>
+    <p> This project is not affiliated with GitHub in any way, if it wasn't obvious from the substandard CSS and code.
+        This project is only made and run by <a href="https://github.com/nelsonjchen">nelsonjchen, GitHub User
+            #5653</a>.</p>
+</body>
+
+</html>
