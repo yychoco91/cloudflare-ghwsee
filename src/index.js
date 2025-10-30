@@ -1,4 +1,4 @@
-import { AutoRouter } from 'itty-router' // ~1kB
+import { AutoRouter } from 'itty-router'
 
 const router = AutoRouter()
 
