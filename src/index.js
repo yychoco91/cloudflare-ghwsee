@@ -3,7 +3,16 @@ import { AutoRouter } from 'itty-router' // ~1kB
 const router = AutoRouter()
 
 router
-  .get('/hello/:name', ({ name }) => `Hello, ${name}!`)
+  .get('/m/:owner/:repo/wiki', async ({ owner, repo }) => {
+    const url = `https://github.com/${owner}/${repo}/wiki`
+    const response = await fetch(url)
+    const html = await response.text()
+    return new Response(html, {
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    })
+  })
 
 export default {
 	...router,
