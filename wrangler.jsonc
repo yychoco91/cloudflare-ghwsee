@@ -5,7 +5,7 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "cloudflare-ghwsee",
-	"main": "src/index.js",
+	"main": "src/index.ts",
 	"compatibility_date": "2025-10-24",
 	"observability": {
 		"enabled": true
